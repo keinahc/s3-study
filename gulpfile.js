@@ -1,9 +1,20 @@
 'use strict';
 
+var del = require('del');
 var gulp = require('gulp');
 var awspublish = require('gulp-awspublish');
 
-gulp.task('deploy', function(callback) {
+
+gulp.task('clean', function() {
+	return del('build');
+});
+
+gulp.task('build', ['clean'], function() {
+	return gulp.src('src/**/*')
+		.pipe(gulp.dest('build'));
+})
+
+gulp.task('deploy', ['build'], function(callback) {
 	var publisher = awspublish.create({
 		"params": {
 			"Bucket": "s3website-study"
