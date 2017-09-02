@@ -59,6 +59,8 @@ typings/
 
 
 .DS_Store
+.idea
 
 # ignore build file
-build
+public
+
