@@ -18,9 +18,4 @@ gulp.task('compile', ['clean'], () => {
     .pipe(gulp.dest(opt.destDir.css));
 });
 
-// gulp.task('dest', ['clean'], () => {
-//   gulp.src(`${opt.srcDir.root}/**/*`)
-//     .pipe(gulp.dest(opt.destDir.root));
-// });
-
 gulp.task('clean', shell.task([`rm -rf ${opt.dirName.dest}`]));
