@@ -1,6 +1,8 @@
 machine:
   node:
-    version: 6.1.0
+    version: 6.11.2
+  post:
+    - npm install -g npm@5.3
 general:
   branches:
     only:
